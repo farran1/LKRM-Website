@@ -8,7 +8,13 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative">
+      {/* Logo placeholder in top left */}
+      <div className="absolute top-8 left-8">
+        <div className="w-16 h-16 bg-white border-2 border-gray-300 rounded-lg flex items-center justify-center shadow-md">
+          <span className="text-gray-400 text-xs font-bold select-none">Logo</span>
+        </div>
+      </div>
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
           Coaching <span className="text-blue-600">Reimagined</span>
@@ -43,4 +49,3 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 };
 
 export default Hero;
-
