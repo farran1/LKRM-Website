@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import Features from '../components/Features';
@@ -139,8 +138,8 @@ const Index = () => {
             </button>
           ))}
         </div>
-        {/* Animated progress bar */}
-        <div className="w-full flex justify-center items-end relative">
+        {/* Animated progress bar now sits at the very bottom of the nav, below all content */}
+        <div className="w-full flex justify-center items-end relative mt-2"> {/* Added mt-2 for clear space */}
           <div className="absolute left-0 bottom-0 w-full h-2 pointer-events-none">
             <div
               className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-300"
@@ -167,4 +166,3 @@ const Index = () => {
 };
 
 export default Index;
-

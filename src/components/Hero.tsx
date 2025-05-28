@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
@@ -9,12 +8,6 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   return (
     <section className="min-h-[65vh] sm:min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative transition-all duration-300">
-      {/* Logo placeholder in top left */}
-      <div className="absolute top-6 left-4 sm:top-8 sm:left-8 z-10">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white border-2 border-gray-300 rounded-lg flex items-center justify-center shadow-md">
-          <span className="text-gray-400 text-xs font-bold select-none">Logo</span>
-        </div>
-      </div>
       <div className="max-w-4xl mx-auto px-2 text-center w-full">
         <h1 className="text-4xl md:text-7xl font-extrabold text-gray-900 mb-3 md:mb-6 uppercase tracking-tight transition-all duration-300 animate-fade-in">
           Coaching <span className="text-blue-600">Reimagined</span>
@@ -66,4 +59,3 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 };
 
 export default Hero;
-
