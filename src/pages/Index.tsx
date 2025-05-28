@@ -173,7 +173,7 @@ const Index = () => {
                   </div>
                   <div className="p-8 h-96 flex items-center justify-center">
                     <div className="text-center">
-                      <features[activeFeature].icon size={64} className="text-blue-600 mx-auto mb-4" />
+                      {React.createElement(features[activeFeature].icon, { size: 64, className: "text-blue-600 mx-auto mb-4" })}
                       <h4 className="text-2xl font-bold text-gray-900 mb-2">{features[activeFeature].title}</h4>
                       <p className="text-gray-600">Interactive {features[activeFeature].title.toLowerCase()} interface</p>
                     </div>
@@ -192,7 +192,7 @@ const Index = () => {
                   }`}
                 >
                   <div className="flex items-center mb-6">
-                    <feature.icon size={32} className="text-blue-600 mr-4" />
+                    {React.createElement(feature.icon, { size: 32, className: "text-blue-600 mr-4" })}
                     <h3 className="text-3xl font-bold text-gray-900">{feature.title}</h3>
                   </div>
                   <ul className="space-y-4">
