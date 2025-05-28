@@ -62,20 +62,20 @@ const Features: React.FC<FeaturesProps> = ({ activeFeature }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left: Device Mockup */}
           <div className="w-full">
-            <div className="bg-gray-800 rounded-2xl p-4 shadow-2xl sticky top-32">
-              <div className="bg-white rounded-xl overflow-hidden">
-                <div className="bg-gray-100 p-4 border-b">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="bg-gray-800 rounded-xl p-3 shadow-xl sticky top-32 max-w-md mx-auto">
+              <div className="bg-white rounded-lg overflow-hidden">
+                <div className="bg-gray-100 p-2 border-b">
+                  <div className="flex items-center space-x-1.5">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   </div>
                 </div>
-                <div className="p-8 h-96 flex items-center justify-center">
+                <div className="p-6 h-64 flex items-center justify-center">
                   <div className="text-center">
-                    {React.createElement(features[activeFeature].icon, { size: 64, className: "text-blue-600 mx-auto mb-4" })}
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">{features[activeFeature].title}</h4>
-                    <p className="text-gray-600">Interactive {features[activeFeature].title.toLowerCase()} interface</p>
+                    {React.createElement(features[activeFeature].icon, { size: 48, className: "text-blue-600 mx-auto mb-3" })}
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{features[activeFeature].title}</h4>
+                    <p className="text-gray-600 text-sm">Interactive {features[activeFeature].title.toLowerCase()} interface</p>
                   </div>
                 </div>
               </div>
