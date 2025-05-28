@@ -59,7 +59,7 @@ const Features: React.FC<FeaturesProps> = ({ activeFeature }) => {
   return (
     <section id="features" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left: Device Mockup */}
           <div className="w-full">
             <div className="bg-gray-800 rounded-xl p-3 shadow-xl sticky top-32 max-w-md mx-auto">
@@ -82,29 +82,33 @@ const Features: React.FC<FeaturesProps> = ({ activeFeature }) => {
             </div>
           </div>
 
-          {/* Right: Active Feature Content */}
+          {/* Right: Feature Content */}
           <div className="w-full">
-            <div className="sticky top-32">
-              <div className="transition-all duration-500 ease-in-out">
-                <div className="flex items-center mb-6">
-                  {React.createElement(features[activeFeature].icon, { size: 32, className: "text-blue-600 mr-4" })}
-                  <h3 className="text-3xl font-bold text-gray-900">{features[activeFeature].title}</h3>
+            <div className="space-y-16">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className={`transition-all duration-500 ${
+                    activeFeature === index ? 'opacity-100' : 'opacity-30'
+                  }`}
+                >
+                  <div className="flex items-center mb-6">
+                    {React.createElement(feature.icon, { size: 32, className: "text-blue-600 mr-4" })}
+                    <h3 className="text-3xl font-bold text-gray-900">{feature.title}</h3>
+                  </div>
+                  <ul className="space-y-4">
+                    {feature.points.map((point, pointIndex) => (
+                      <li key={pointIndex} className="flex items-start">
+                        <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 text-lg">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-4">
-                  {features[activeFeature].points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start">
-                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700 text-lg">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-        
-        {/* Spacer for scroll-triggered feature changes */}
-        <div className="h-[200vh]"></div>
       </div>
     </section>
   );
