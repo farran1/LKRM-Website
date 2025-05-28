@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, Monitor, Calendar, Users, MessageSquare, DollarSign, CheckCircle, ArrowRight } from 'lucide-react';
 
 const Index = () => {
