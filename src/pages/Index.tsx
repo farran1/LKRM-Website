@@ -153,8 +153,6 @@ const Index = () => {
           </div>
         </div>
       </nav>
-      {/* Spacer so nav doesn't overlap */}
-      <div className="h-24 md:h-24"></div>
 
       <Hero scrollToSection={scrollToSection} />
       <Features activeFeature={activeFeature} />
