@@ -59,9 +59,9 @@ const Features: React.FC<FeaturesProps> = ({ activeFeature }) => {
   return (
     <section id="features" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left: Device Mockup */}
-          <div className="lg:col-span-5">
+          <div className="w-full">
             <div className="bg-gray-800 rounded-2xl p-4 shadow-2xl sticky top-32">
               <div className="bg-white rounded-xl overflow-hidden">
                 <div className="bg-gray-100 p-4 border-b">
@@ -82,14 +82,8 @@ const Features: React.FC<FeaturesProps> = ({ activeFeature }) => {
             </div>
           </div>
 
-          {/* Middle: Separator */}
-          <div className="lg:col-span-1 flex justify-center">
-            <Separator orientation="vertical" className="h-full min-h-[600px] hidden lg:block" />
-            <Separator orientation="horizontal" className="w-full lg:hidden" />
-          </div>
-
           {/* Right: Feature Content */}
-          <div className="lg:col-span-6">
+          <div className="w-full">
             <div className="space-y-16">
               {features.map((feature, index) => (
                 <div
