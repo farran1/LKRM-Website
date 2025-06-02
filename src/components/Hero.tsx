@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     <section
       className="
         relative flex items-center justify-center
-        min-h-[75vh] sm:min-h-[95vh] pt-20
+        min-h-[75vh] sm:min-h-[95vh] pt-32 md:pt-20
         before:content-[''] before:absolute before:inset-0
         before:bg-[url('/1.jpg')] before:bg-cover before:bg-center
         before:opacity-50 before:brightness-75
@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       <div className="relative z-6 max-w-7xl mx-auto px-2 text-center w-full">
         {/* Headline in white */}
         <h1 className="
-            text-4xl sm:text-5xl md:text-7xl  font-extrabold
+            text-2xl sm:text-5xl md:text-7xl font-extrabold
             text-lk-primary mb-3 md:mb-6
             uppercase tracking-tight
             whitespace-nowrap

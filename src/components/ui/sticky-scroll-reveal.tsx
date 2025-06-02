@@ -30,11 +30,11 @@ export const StickyScroll = ({
   const nextIdx = activeCard < content.length - 1 ? activeCard + 1 : null;
 
   return (
-    <section className="sticky top-0 z-10 py-0" style={{ height: '32rem' }}>
-      <div className="w-full mx-auto px-3 h-full">
+    <section className="px-3">
+      <div className="w-full mx-auto h-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 items-start h-full">
           {/* Left: static mockup card with fixed height */}
-          <div className="lg:col-span-8 h-full p-0 m-0 flex items-top justify-center">
+          <div className="lg:col-span-8 h-full p-0 m-0 flex items-center justify-center">
             {content[activeCard].image ? (
               <img
                 src={content[activeCard].image}
@@ -56,7 +56,7 @@ export const StickyScroll = ({
             {/* Up arrow, now above the preview group */}
             {prevIdx !== null && (
               <button
-                className="mx-auto mb-2 bg-white/80 hover:bg-white shadow rounded-full p-1 border border-gray-200 transition z-10"
+                className="mx-auto mb-6 bg-white/80 hover:bg-white shadow rounded-full p-1 border border-gray-200 transition z-10"
                 style={{ position: 'relative', top: 0 }}
                 onClick={() => goTo(prevIdx)}
                 aria-label="Previous feature"
@@ -67,20 +67,20 @@ export const StickyScroll = ({
             {/* Previous preview */}
             {prevIdx !== null && (
               <div
-                className="opacity-40 pointer-events-auto cursor-pointer mb-1 transition-all duration-300 hover:opacity-60"
+                className="opacity-40 pointer-events-auto cursor-pointer mb-6 transition-all duration-300 hover:opacity-60"
                 onClick={() => goTo(prevIdx)}
               >
                 <FeatureCard feature={content[prevIdx]} preview />
               </div>
             )}
             {/* Current feature */}
-            <div className="relative z-10 bg-white rounded-xl shadow-xl p-6 mb-1">
+            <div className="relative z-10 bg-white rounded-xl shadow-xl p-6 mb-3">
               <FeatureCard feature={content[activeCard]} />
             </div>
             {/* Next preview */}
             {nextIdx !== null && (
               <div
-                className="opacity-40 pointer-events-auto cursor-pointer mt-1 transition-all duration-300 hover:opacity-60"
+                className="opacity-40 pointer-events-auto cursor-pointer mt-3 transition-all duration-300 hover:opacity-60"
                 onClick={() => goTo(nextIdx)}
               >
                 <FeatureCard feature={content[nextIdx]} preview />
@@ -89,7 +89,7 @@ export const StickyScroll = ({
             {/* Down arrow, now below the preview group */}
             {nextIdx !== null && (
               <button
-                className="mx-auto mt-2 bg-white/80 hover:bg-white shadow rounded-full p-1 border border-gray-200 transition z-10"
+                className="mx-auto mt-6 bg-white/80 hover:bg-white shadow rounded-full p-1 border border-gray-200 transition z-10"
                 style={{ position: 'relative', bottom: 0 }}
                 onClick={() => goTo(nextIdx)}
                 aria-label="Next feature"

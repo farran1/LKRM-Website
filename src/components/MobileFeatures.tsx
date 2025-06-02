@@ -1,4 +1,3 @@
-// src/components/Features.tsx
 import React from 'react';
 import {
   Monitor,
@@ -7,10 +6,8 @@ import {
   MessageSquare,
   DollarSign,
 } from 'lucide-react';
-import { StickyScroll, StickyFeature } from './ui/sticky-scroll-reveal';
-import MobileFeatures from './MobileFeatures';
 
-const features: StickyFeature[] = [
+const features = [
   {
     title: 'Dashboard',
     icon: Monitor,
@@ -38,7 +35,7 @@ const features: StickyFeature[] = [
     points: [
       'Assign responsibilities amongst your entire staff',
       'Track completion status with automated reminders',
-      "Optimize your team's workflow",
+      'Optimize your team\'s workflow',
     ],
   },
   {
@@ -63,21 +60,27 @@ const features: StickyFeature[] = [
   },
 ];
 
-const Features: React.FC = () => {
-  // Use a simple window width check for SSR safety
-  const [isMobile, setIsMobile] = React.useState(false);
-  React.useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
-
+const MobileFeatures: React.FC = () => {
   return (
-    <section id="features" className="py-0 bg-lk-background">
-      {isMobile ? <MobileFeatures /> : <StickyScroll content={features} />}
-    </section>
+    <div className="flex flex-col gap-6 px-2 py-4">
+      {features.map((feature, idx) => (
+        <div key={feature.title} className="rounded-xl bg-white shadow p-4 flex flex-col gap-2">
+          <div className="flex items-center gap-3 mb-1">
+            {feature.icon && React.createElement(feature.icon, { size: 28, className: 'text-blue-600' })}
+            <span className="text-lg font-bold text-gray-900">{feature.title}</span>
+          </div>
+          {feature.image && (
+            <img src={feature.image} alt={feature.title + ' mockup'} className="w-full rounded mb-2" />
+          )}
+          <ul className="list-disc pl-6 text-gray-700 text-base">
+            {feature.points.map((pt, i) => (
+              <li key={i}>{pt}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 };
 
-export default Features;
+export default MobileFeatures; 

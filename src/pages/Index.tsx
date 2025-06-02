@@ -50,22 +50,23 @@ const Index: React.FC = () => {
     <div className="min-h-screen bg-lk-background">
       {/* Full-width frosted bar behind logo & nav */}
       <div
-        className="fixed top-0 left-0 w-full h-20 bg-white/30 backdrop-blur-sm z-30"
+        className="fixed top-0 left-0 w-full h-14 md:h-20 bg-white/30 backdrop-blur-sm z-30"
         style={{ WebkitBackdropFilter: 'blur(8px)', backdropFilter: 'blur(8px)' }}
       />
 
       {/* Logo, floated above the bar */}
       <Logo
-        className="fixed top-0 left-4 h-20 w-auto text-lk-primary z-50"
+        className="fixed top-0 left-2 h-12 w-auto text-lk-primary z-50 md:top-0 md:left-4 md:h-20"
         aria-label="LKRM Logo"
       />
 
       {/* Nav pill */}
       <nav
         className="
-          fixed top-5 left-1/2 transform -translate-x-1/2 z-40
-          bg-lk-background/90 rounded-full px-6 py-3 shadow-md overflow-hidden
-          w-[90vw] max-w-md
+          fixed top-16 md:top-5 left-1/2 transform -translate-x-1/2 z-40
+          bg-lk-background/90 rounded-full px-3 py-2 shadow-md overflow-hidden
+          w-[98vw] max-w-xs
+          md:px-6 md:py-3 md:w-[90vw] md:max-w-md
         "
       >
         <div className="flex items-center justify-center space-x-8">
@@ -91,7 +92,7 @@ const Index: React.FC = () => {
 
       {/* Page sections */}
       <Hero scrollToSection={scrollToSection} />
-      <Features activeFeature={activeFeature} setActiveFeature={setActiveFeature} />
+      <Features />
 
       <PilotProgram
         countdownValue={countdownValue}
