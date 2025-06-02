@@ -28,4 +28,5 @@ export default defineConfig(({ mode }) => ({
       // e.g. icon: true
     }),
   ].filter(Boolean),
+  base: "/lkrm-flow-wireframe-model-59/",
 }));
