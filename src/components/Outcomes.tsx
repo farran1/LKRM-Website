@@ -30,7 +30,7 @@ const Outcomes: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Proven Results
+            Unlock Your Team's Potential
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See the impact that streamlined coaching management can have on  your team today:
@@ -52,10 +52,10 @@ const Outcomes: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="bg-lk-background rounded-lg p-8 shadow-lg inline-block">
             <blockquote className="text-2xl text-lk-primary italic mb-4">
-              "The difference between ordinary and extraordinary is that little extra."
+              "Time is money. Wasted time means wasted money means trouble."
             </blockquote>
             <cite className=" text-lk-primary font-semibold">
-              — Jimmie Johnson
+              — Shirley Temple
             </cite>
           </div>
         </div>

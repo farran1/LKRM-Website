@@ -60,6 +60,26 @@ const Index: React.FC = () => {
         aria-label="LKRM Logo"
       />
 
+      {/* CTA Button - Desktop only */}
+      <a
+        href="https://calendly.com/andrew-lkrmsports/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden md:inline-block fixed top-4 right-8 z-50 bg-lk-accent text-lk-background px-6 py-2 rounded-lg font-semibold shadow hover:bg-lk-primary transition"
+      >
+        Request Free Demo
+      </a>
+
+      {/* CTA Button - Mobile only */}
+      <a
+        href="https://calendly.com/andrew-lkrmsports/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="md:hidden fixed top-2 right-2 z-50 bg-lk-accent text-lk-background px-4 py-2 rounded-lg font-semibold shadow hover:bg-lk-primary transition text-sm"
+      >
+        Request Free Demo
+      </a>
+
       {/* Nav pill */}
       <nav
         className="
