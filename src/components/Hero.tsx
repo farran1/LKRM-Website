@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import Logo from './Logo';  // your inline Logo component
 
 interface HeroProps {
   scrollToSection: (sectionId: string) => void;
@@ -7,58 +8,82 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   return (
-    <section className="min-h-[85vh] sm:min-h-[95vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative transition-all duration-300 pt-20">
-      {/* Logo placeholder in top left */}
-      <div className="absolute top-6 left-6 z-40">
-        <div className="bg-white/90 backdrop-blur-md rounded-lg px-4 py-2 shadow-lg border border-gray-200">
-          <div className="text-xl font-bold text-blue-600">LKRM</div>
-        </div>
-      </div>
+    <section
+      className="
+        relative flex items-center justify-center
+        min-h-[75vh] sm:min-h-[95vh] pt-20
+        before:content-[''] before:absolute before:inset-0
+        before:bg-[url('/1.jpg')] before:bg-cover before:bg-center
+        before:opacity-50 before:brightness-75
+      "
+    >
 
-      <div className="max-w-4xl mx-auto px-2 text-center w-full">
-        <h1 className="text-4xl md:text-7xl font-extrabold text-gray-900 mb-3 md:mb-6 uppercase tracking-tight transition-all duration-300 animate-fade-in">
-          Coaching <span className="text-blue-600">Reimagined</span>
+      <div className="relative z-6 max-w-7xl mx-auto px-2 text-center w-full">
+        {/* Headline in white */}
+        <h1 className="
+            text-4xl sm:text-5xl md:text-7xl  font-extrabold
+            text-lk-primary mb-3 md:mb-6
+            uppercase tracking-tight
+            whitespace-nowrap
+          ">
+          Coach Smarter, Not Harder.
         </h1>
-        {/* Decorative downward arrow connecting H1 to subhead */}
-        <div className="flex flex-col items-center -mt-3 mb-3">
-          <ChevronDown size={32} className="text-blue-400 animate-bounce-slow" />
-        </div>
-        <h2 className="text-lg md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto leading-snug animate-fade-in transition-all duration-500">
-          A suite of powerful tools designed to save High School Coaches time & money by reducing their administrative burden.
+
+        {/* Sub-headline in white */}
+        <h2 className="
+            text-lg md:text-2xl font-bold
+            text-lk-primary
+            mb-8 max-w-3xl mx-auto leading-snug
+          ">
+          A suite of powerful tools designed to save High School Coaches time &amp; money
+          by reducing administrative burdens.
         </h2>
-        {/* CTA primary */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-9 animate-fade-in">
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-9">
           <button
             onClick={() => scrollToSection('features')}
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-md hover:scale-105 focus:scale-105 duration-200"
+            className="
+              bg-lk-accent text-lk-background px-8 py-3 rounded-lg
+              font-semibold hover:bg-lk-primary transition border border-lk-background
+              flex items-center gap-2 shadow-md
+            "
           >
             See How LKRM Works
             <ArrowRight size={20} />
           </button>
-          {/* Secondary micro-CTA (e.g., email capture placeholder) */}
+
           <form
-            className="flex w-full sm:w-auto items-center bg-white rounded-lg px-3 py-2 border border-gray-200 focus-within:shadow-lg transition-all duration-150"
-            onSubmit={e => { e.preventDefault(); /* handle email submit here */ }}
+            className="
+              flex w-full sm:w-auto items-center
+              bg-lk-background rounded-lg px-3 py-2
+              border border-gray-200 transition-shadow
+            "
+            onSubmit={e => e.preventDefault()}
           >
             <input
               type="email"
               placeholder="Sign Up for a Free Demo"
-              className="bg-transparent outline-none border-none text-sm flex-1 px-2"
+              className="bg-lk-background outline-none flex-1 px-2 text-gray-700"
               required
             />
             <button
               type="submit"
-              className="ml-1 bg-blue-50 hover:bg-blue-100 text-blue-600 px-3 py-1 rounded font-semibold text-sm transition-colors duration-200"
+              className="
+                ml-1 bg-lk-background text-lk-primary px-3 py-1 rounded
+                font-semibold text-sm hover:bg-gray-200 transition
+              "
             >
               Sign Up
             </button>
           </form>
         </div>
+
         <button
           onClick={() => scrollToSection('features')}
-          className="animate-bounce mt-2"
+          className="animate-bounce mt-2 text-white"
         >
-          <ChevronDown size={32} className="text-gray-400" />
+          <ChevronDown size={32} />
         </button>
       </div>
     </section>
