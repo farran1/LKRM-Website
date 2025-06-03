@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Logo from './Logo';  // your inline Logo component
 
@@ -7,6 +7,25 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
+  const formRef = useRef(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = formRef.current;
+    const data = new FormData(form);
+
+    await fetch('https://formspree.io/f/mvgroyqa', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
+
+    // Redirect to Calendly after successful submission
+    window.location.href = 'https://calendly.com/andrew-lkrmsports/30min';
+  };
+
   return (
     <section
       className="
@@ -54,17 +73,19 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           </button>
 
           <form
+            ref={formRef}
             className="
               flex w-full sm:w-auto items-center
               bg-lk-background rounded-lg px-3 py-2
               border border-gray-200 transition-shadow
             "
-            onSubmit={e => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <input
               type="email"
+              name="email"
               placeholder="Sign Up for a Free Demo"
-              className="bg-lk-background outline-none flex-1 px-2 text-gray-700"
+              className="bg-lk-background outline-none flex-1 px-2 text-gray-700 text-xs sm:text-base"
               required
             />
             <button
