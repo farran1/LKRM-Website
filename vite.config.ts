@@ -14,8 +14,10 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        format: 'es',
       },
     },
+    target: 'esnext',
   },
   resolve: {
     alias: {
