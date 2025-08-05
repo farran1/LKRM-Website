@@ -21,7 +21,12 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <div className="flex items-center text-gray-300">
                 <Mail size={20} className="mr-2" />
-                <span>info@lkrmsports.com</span>
+                <a 
+                  href="mailto:info@lkrmsports.com" 
+                  className="hover:text-white transition-colors"
+                >
+                  info@lkrmsports.com
+                </a>
               </div>
             </div>
           </div>
