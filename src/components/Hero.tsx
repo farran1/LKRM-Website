@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     });
 
     // Redirect to Calendly after successful submission
-    window.location.href = 'https://calendly.com/andrew-lkrmsports/30min';
+    window.location.href = 'https://calendly.com/andrew-lkrmsports/';
   };
 
   return (
