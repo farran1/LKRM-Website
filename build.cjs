@@ -14,4 +14,7 @@ fs.copyFileSync('public/_headers', 'dist/_headers');
 console.log('Copying _redirects file...');
 fs.copyFileSync('public/_redirects', 'dist/_redirects');
 
+console.log('Running post-build processing...');
+execSync('node post-build.cjs', { stdio: 'inherit' });
+
 console.log('Build complete! Files are ready for deployment.');
