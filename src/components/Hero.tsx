@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { CALENDLY_URL } from '../config';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Logo from './Logo';  // your inline Logo component
 
@@ -23,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     });
 
     // Redirect to Calendly after successful submission
-    window.location.href = 'https://calendly.com/andrew-lkrmsports/';
+    window.location.href = CALENDLY_URL;
   };
 
   return (
