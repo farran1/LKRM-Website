@@ -4,7 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import svgr from "vite-plugin-svgr";
 
-
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -14,15 +13,14 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-        format: 'iife',
-        entryFileNames: 'assets/index.js',
-        chunkFileNames: 'assets/index.js',
-        assetFileNames: 'assets/[name].[ext]'
+        format: 'es', // Use ES modules like the working gh-pages branch
+        entryFileNames: 'assets/[name]-[hash].js', // Standard .js with hash
+        chunkFileNames: 'assets/[name]-[hash].js', // Standard .js with hash
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       },
     },
     target: 'esnext',
     modulePreload: false,
-    assetsInlineLimit: Infinity, // Inline all assets
   },
   resolve: {
     alias: {
@@ -30,17 +28,9 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [
-    // React (with SWC) plugin
     react(),
-
-    // Lovable component tagger, only in dev
     mode === "development" && componentTagger(),
-
-    // SVGR: import .svg as ReactComponent
-    svgr({
-      // optional SVGR options here
-      // e.g. icon: true
-    }),
+    svgr({}),
   ].filter(Boolean),
-  base: "./",
+  base: "/", // Use absolute paths like the working gh-pages branch
 }));
