@@ -15,9 +15,9 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: undefined,
         format: 'es',
-        entryFileNames: 'assets/[name]-[hash].mjs', // Use .mjs extension
-        chunkFileNames: 'assets/[name]-[hash].mjs', // Use .mjs extension
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        entryFileNames: 'assets/index.js', // Single file without hash
+        chunkFileNames: 'assets/index.js', // Single file without hash
+        assetFileNames: 'assets/[name].[ext]'
       },
     },
     target: 'esnext',
