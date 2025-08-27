@@ -14,9 +14,9 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-        format: 'iife', // Changed from 'es' to 'iife' for better GitHub Pages compatibility
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
+        format: 'es',
+        entryFileNames: 'assets/[name]-[hash].mjs', // Use .mjs extension
+        chunkFileNames: 'assets/[name]-[hash].mjs', // Use .mjs extension
         assetFileNames: 'assets/[name]-[hash].[ext]'
       },
     },
