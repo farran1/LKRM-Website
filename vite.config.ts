@@ -14,9 +14,9 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-        format: 'iife', // Use IIFE to avoid ES module MIME type issues
-        entryFileNames: 'assets/index.js',
-        chunkFileNames: 'assets/index.js',
+        format: 'iife',
+        entryFileNames: 'assets/index.bundle', // Use no extension to avoid MIME type detection
+        chunkFileNames: 'assets/index.bundle', // Use no extension to avoid MIME type detection
         assetFileNames: 'assets/[name].[ext]'
       },
     },
@@ -41,5 +41,5 @@ export default defineConfig(({ mode }) => ({
       // e.g. icon: true
     }),
   ].filter(Boolean),
-  base: "./", // Use relative paths
+  base: "./",
 }));
