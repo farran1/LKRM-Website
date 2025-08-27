@@ -15,13 +15,14 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: undefined,
         format: 'iife',
-        entryFileNames: 'assets/index.bundle', // Use no extension to avoid MIME type detection
-        chunkFileNames: 'assets/index.bundle', // Use no extension to avoid MIME type detection
+        entryFileNames: 'assets/index.js',
+        chunkFileNames: 'assets/index.js',
         assetFileNames: 'assets/[name].[ext]'
       },
     },
     target: 'esnext',
     modulePreload: false,
+    assetsInlineLimit: Infinity, // Inline all assets
   },
   resolve: {
     alias: {
