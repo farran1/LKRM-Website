@@ -15,8 +15,8 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: undefined,
         format: 'es',
-        entryFileNames: 'assets/index.js', // Single file without hash
-        chunkFileNames: 'assets/index.js', // Single file without hash
+        entryFileNames: 'assets/index.mjs', // Use .mjs extension for ES modules
+        chunkFileNames: 'assets/index.mjs', // Use .mjs extension for ES modules
         assetFileNames: 'assets/[name].[ext]'
       },
     },
