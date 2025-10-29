@@ -1,5 +1,6 @@
 // src/pages/Index.tsx
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import { CALENDLY_URL } from '../config';
 import Hero from '../components/Hero';
@@ -44,7 +45,22 @@ const Index: React.FC = () => {
   }, [deadlineTimer]);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (!element) return;
+    
+    // Calculate header offset: nav pill position + nav height + some padding
+    // Mobile: nav at top-16 (64px) + nav height (~48px) = ~112px
+    // Desktop: nav at top-5 (20px) + nav height (~56px) = ~76px
+    const isMobile = window.innerWidth < 768;
+    const headerOffset = isMobile ? 112 : 76;
+    
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -57,29 +73,46 @@ const Index: React.FC = () => {
 
       {/* Logo, floated above the bar */}
       <Logo
-        className="fixed top-0 left-2 h-12 w-auto text-lk-primary z-50 md:top-0 md:left-4 md:h-20"
+        className="fixed top-0 left-2 h-12 w-auto text-lk-primary z-50 md:top-0 md:left-4 md:h-20 cursor-pointer"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="LKRM Logo"
       />
 
-      {/* CTA Button - Desktop only */}
-      <a
-        href={CALENDLY_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hidden md:inline-block fixed top-4 right-8 z-50 bg-lk-accent text-lk-background px-6 py-2 rounded-lg font-semibold shadow hover:bg-lk-primary transition"
-      >
-        Request Free Demo
-      </a>
+      {/* CTA Buttons - Desktop only */}
+      <div className="hidden md:flex fixed top-4 right-8 z-50 gap-3 items-center">
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-lk-accent text-lk-background px-6 py-2 rounded-lg font-semibold shadow hover:bg-lk-primary transition"
+        >
+          Request Free Demo
+        </a>
+        {/* <Link
+          to="/login"
+          className="bg-white text-lk-primary px-6 py-2 rounded-lg font-semibold shadow border-2 border-lk-primary hover:bg-lk-primary hover:text-white transition"
+        >
+          Login
+        </Link> */}
+      </div>
 
-      {/* CTA Button - Mobile only */}
-      <a
-        href={CALENDLY_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="md:hidden fixed top-2 right-2 z-50 bg-lk-accent text-lk-background px-4 py-2 rounded-lg font-semibold shadow hover:bg-lk-primary transition text-sm"
-      >
-        Request Free Demo
-      </a>
+      {/* CTA Buttons - Mobile only */}
+      <div className="md:hidden fixed top-2 right-2 z-50 flex gap-2">
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-lk-accent text-lk-background px-4 py-2 rounded-lg font-semibold shadow hover:bg-lk-primary transition text-sm"
+        >
+          Request Free Demo
+        </a>
+        {/* <Link
+          to="/login"
+          className="bg-white text-lk-primary px-3 py-2 rounded-lg font-semibold shadow border-2 border-lk-primary hover:bg-lk-primary hover:text-white transition text-sm"
+        >
+          Login
+        </Link> */}
+      </div>
 
       {/* Nav pill */}
       <nav

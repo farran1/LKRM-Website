@@ -1,0 +1,216 @@
+/* ============================================
+   LKRM Login Pages - Complete Styling
+   ============================================ */
+
+/* Main Container */
+.auth-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Background Image Section (Left 40%) */
+.auth-background {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%;
+}
+
+.auth-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Form Wrapper Section (Right 60%) */
+.auth-form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background: linear-gradient(#022133, #025A8A);
+    padding: 40px 20px;
+    margin-left: 40%;
+    min-height: 100vh;
+}
+
+/* Form Container */
+.auth-form {
+    width: 100%;
+    max-width: 500px;
+    min-width: 360px;
+}
+
+/* Logo Section */
+.auth-logo {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-logo svg {
+    color: white;
+    margin: 0 auto;
+}
+
+.auth-logo .auth-des {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 16px;
+}
+
+/* Form Inputs */
+.auth-input {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.auth-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Password toggle button */
+.auth-password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0 8px;
+    margin: 0;
+}
+
+.auth-password-toggle:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Form Buttons */
+.auth-button {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: #1D75D0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.auth-button:hover {
+    background-color: #1565C0;
+}
+
+.auth-button:active {
+    background-color: #0D47A1;
+}
+
+/* Error Message */
+.auth-error {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+/* Success Message */
+.auth-success-message {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-success-message p {
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+/* Divider with Text (OR) */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-divider:not(:empty)::before {
+    margin-right: 0.75em;
+}
+
+.auth-divider:not(:empty)::after {
+    margin-left: 0.75em;
+}
+
+.auth-divider-text {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Forgot Password Link */
+.auth-forgot-password {
+    color: #fff;
+    text-align: right;
+    font-size: 14px;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.auth-forgot-password:hover {
+    color: #1D75D0;
+    text-decoration: underline;
+}
+
+/* Actions Container */
+.auth-actions {
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .auth-background {
+        position: relative;
+        width: 100%;
+        height: 30vh;
+    }
+
+    .auth-form-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+

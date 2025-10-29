@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#pilot-program" className="hover:text-white transition-colors">
                   Pricing
                 </a>
               </li>
@@ -63,12 +63,12 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/apply" className="hover:text-white transition-colors">
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="mailto:info@lkrmsports.com" className="hover:text-white transition-colors">
                   Contact Us
                 </a>
               </li>

@@ -15,13 +15,13 @@ const Outcomes: React.FC = () => {
     },
     {
       icon: Users2,
-      title: "Instant Communication",
-      description: "Streamlined communication with players, parents, and staff"
+      title: "Live Stats Tracking",
+      description: "Replace your paper stats to make changes when it counts."
     },
     {
       icon: Target,
       title: "Goal Achievement",
-      description: "Track and achieve your season objectives more effectively"
+      description: "Track and achieve your season objectives more effectively."
     }
   ];
 
@@ -33,7 +33,7 @@ const Outcomes: React.FC = () => {
             Unlock Your Team's Potential
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See the impact that streamlined coaching management can have on  your team today:
+            See the impact that LKRM can have on  your team this season:
           </p>
         </div>
 
@@ -52,10 +52,10 @@ const Outcomes: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="bg-lk-background rounded-lg p-8 shadow-lg inline-block">
             <blockquote className="text-2xl text-lk-primary italic mb-4">
-              "Time is money. Wasted time means wasted money means trouble."
+              Referral Bonuses and Early Bird Discount Available for a Limited Time.
             </blockquote>
             <cite className=" text-lk-primary font-semibold">
-              — Shirley Temple
+              * Subject to Change, Book a Demo Today. *
             </cite>
           </div>
         </div>

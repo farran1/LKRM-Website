@@ -39,7 +39,7 @@ export const StickyScroll = ({
               <img
                 src={content[activeCard].image}
                 alt={content[activeCard].title + ' mockup'}
-                className="max-w-5xl max-h-[90%] w-full h-full"
+                className="max-w-5xl max-h-[90%] w-full h-full rounded-xl"
                 style={{ display: 'block' }}
               />
             ) : content[activeCard].icon ? (

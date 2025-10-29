@@ -55,8 +55,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             text-lk-primary
             mb-8 max-w-3xl mx-auto leading-snug
           ">
-          A suite of powerful tools designed to save High School Coaches time &amp; money
-          by reducing administrative burdens.
+          Replace notebooks, apps, and spreadsheets with a single platform.
+          We help Basketball Coaches win more games.
         </h2>
 
         {/* CTAs */}

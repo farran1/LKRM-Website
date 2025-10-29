@@ -3,19 +3,29 @@ import {
   Monitor,
   Calendar,
   Users,
-  MessageSquare,
+  PlayCircleIcon,
   DollarSign,
 } from 'lucide-react';
 
 const features = [
   {
-    title: 'Dashboard',
+    title: 'Centralized Dashboard',
     icon: Monitor,
-    image: '/Dashboard.png',
+    image: '/Dashboard 1.png',
     points: [
-      'Centralized view of all team activities',
-      'Never forget a detail with a custom Gameday Checklist',
-      'Customizable widgets for quick access to key information',
+      'All your team information in one place',
+      'Never miss a detail with Gameday Checklist',
+      'Two Clicks away from anything you need',
+    ],
+  },
+  {
+    title: 'Live Stats Tracking',
+    icon: PlayCircleIcon,
+    image: '/Live Stat Tracker.png',
+    points: [
+      'Real-time tracking of player/team statistics',
+      'Live insights and reports before you lose',
+      'Automatically update MaxPreps',
     ],
   },
   {
@@ -23,9 +33,9 @@ const features = [
     icon: Calendar,
     image: '/Calendar View.png',
     points: [
-      'Plan, schedule, and track every event of your season',
+      'Plan, schedule, and track every event detail',
       'Your natural planning process on our platform',
-      'Integration with your existing calendar systems',
+      'No more excuses for missing anything',
     ],
   },
   {
@@ -33,19 +43,9 @@ const features = [
     icon: Users,
     image: '/Tasks.png',
     points: [
-      'Assign responsibilities amongst your entire staff',
-      'Track completion status with automated reminders',
+      'Assign responsibilities amongst your staff',
+      'Track progress with automated reminders',
       'Optimize your team\'s workflow',
-    ],
-  },
-  {
-    title: 'Communication',
-    icon: MessageSquare,
-    image: '/Emails-1.png',
-    points: [
-      'Effortless communication with coaches, players, and parents',
-      'Send and receive both emails and text messages from within the platform',
-      'Automated reminders for instant communication',
     ],
   },
   {
@@ -53,9 +53,9 @@ const features = [
     icon: DollarSign,
     image: '/Budget-3.png',
     points: [
-      'Plan, track, and review every expense of your season',
+      'Plan, track, and review every expense',
       'Generate budget reports for administration',
-      'Never lose a receipt again with our automated receipt detail capture',
+      'Never handle a receipt again',
     ],
   },
 ];
@@ -70,7 +70,7 @@ const MobileFeatures: React.FC = () => {
             <span className="text-lg font-bold text-gray-900">{feature.title}</span>
           </div>
           {feature.image && (
-            <img src={feature.image} alt={feature.title + ' mockup'} className="w-full rounded mb-2" />
+            <img src={feature.image} alt={feature.title + ' mockup'} className="w-full rounded-xl mb-2" />
           )}
           <ul className="list-disc pl-6 text-gray-700 text-base">
             {feature.points.map((pt, i) => (
