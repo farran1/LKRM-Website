@@ -73,13 +73,23 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a 
+                  href="/LKRM-Privacy-Policy.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
+                <a 
+                  href="/LKRM-Terms-of-Use.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Terms of Use
                 </a>
               </li>
             </ul>

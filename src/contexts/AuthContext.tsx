@@ -57,3 +57,4 @@ export function useSupabaseClient() {
   return supabase
 }
 
+
