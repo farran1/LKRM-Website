@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useSession } from "./contexts/AuthContext";
 import Index from "./pages/Index";
+import HighSchool from "./pages/HighSchool";
+import Tournaments from "./pages/Tournaments";
 import NotFound from "./pages/NotFound";
 import Apply from "./pages/apply";
 import Login from "./pages/Login";
@@ -35,7 +37,10 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Tournaments />} />
+          <Route path="/high-school" element={<HighSchool />} />
+          <Route path="/tournaments" element={<Tournaments />} />
+          <Route path="/original" element={<Index />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/app" element={<Protected element={<AppLayout />} />} >
             <Route path="referrals" element={<Referrals />} />
